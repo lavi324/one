@@ -62,7 +62,7 @@ resource "helm_release" "jenkins" {
   chart      = "jenkins/jenkins"
   namespace  = "jenkins"
   version    = "5.3.1"
-  timeout = 600
+  timeout = 800
 }
 
 resource "helm_release" "argo-cd" {
@@ -71,4 +71,7 @@ resource "helm_release" "argo-cd" {
   chart      = "argo/argo-cd"
   namespace  = "argo"
   version    = "7.3.0"
+  timeout = 800
 }
+
+
