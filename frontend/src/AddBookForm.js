@@ -11,7 +11,7 @@ const AddBookForm = () => {
     event.preventDefault();
 
     try {
-      await axios.post('http://34.46.49.182/api/books', { title, author });
+      await axios.post('http://http://34.57.166.227/api/books', { title, author });
       setTitle('');
       setAuthor('');
       alert('Book added successfully!');

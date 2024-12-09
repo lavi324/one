@@ -11,7 +11,7 @@ const EditBookForm = ({ book }) => {
     event.preventDefault();
 
     try {
-      await axios.put(`http://34.46.49.182/api/books/${book._id}`, { title, author });
+      await axios.put(`http://34.57.166.227/api/books/${book._id}`, { title, author });
       alert('Book updated successfully!');
     } catch (error) {
       console.error('Error updating book:', error);

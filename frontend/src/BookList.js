@@ -9,7 +9,7 @@ const BookList = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await axios.get('http://34.46.49.182/api/books');
+        const response = await axios.get('http://34.57.166.227/api/books');
         setBooks(response.data);
       } catch (error) {
         console.error('Error fetching books:', error);
