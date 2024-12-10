@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: backend
-          image: lavi324/one-backend:0.4
+          image: lavi324/one-backend:0.5
           ports:
             - containerPort: 5000
