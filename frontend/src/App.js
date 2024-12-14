@@ -19,7 +19,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Book Management Applicationnnn</h1>
+      <h1>Book Management Application:)</h1>
       <BookList handleEditClick={handleEditClick} /> {/* Pass handleEditClick as prop */}
       <AddBookForm />
       {editBookId && <EditBookForm bookId={editBookId} onCancelEdit={handleCancelEdit} />}

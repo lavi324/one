@@ -15,7 +15,7 @@ pipeline {
     environment {
         DOCKER_REGISTRY = 'https://registry.hub.docker.com'
         DOCKER_HUB_CREDENTIALS = credentials('dockerhublavi')
-        TAG = '1.0'
+        TAG = '0.9'
     }
 
     stages {
