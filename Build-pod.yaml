@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: docker-image-build
+  namespace: jenkins
+spec:
+  containers:  
+  - name: dind
+    image: lavi324/node_dind_image:0.4
+    imagePullPolicy: Always
+    securityContext:
+      privileged: true
