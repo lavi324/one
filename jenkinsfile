@@ -38,7 +38,7 @@ pipeline {
                     sh '''        
                     git add .
                     git commit -m "pipeline commit"
-                    git push https://${GITHUB_USER}:${GITHUB_PASS}@github.com/lavi324/one 
+                    git push https://${GITHUB_USER}:${GITHUB_PASS}@github.com/lavi324/one master 
                     '''
                 }
             }

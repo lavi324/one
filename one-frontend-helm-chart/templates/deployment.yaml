@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: lavi324/one-frontend:0.6
+        image: lavi324/one-frontend:0.7
         ports:
         - containerPort: 3000
