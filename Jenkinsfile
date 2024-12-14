@@ -15,7 +15,7 @@ pipeline {
     environment {
         DOCKER_REGISTRY = 'https://registry.hub.docker.com'
         DOCKER_HUB_CREDENTIALS = credentials('dockerhublavi')
-        TAG = '1.0'
+        TAG = '1.1'
     }
 
     stages {
@@ -86,7 +86,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'dockerhublavi', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                     sh '''
                     echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin  
-                    helm push one-frontend-helm-chart-0.1.3.tgz oci://registry-1.docker.io/lavi324
+                    helm push one-frontend-helm-chart-0.1.4.tgz oci://registry-1.docker.io/lavi324
                     '''
                 }   
             }
