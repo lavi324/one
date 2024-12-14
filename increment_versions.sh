@@ -21,17 +21,17 @@ increment_helm_chart_version() {
 jenkinsfile_path="/home/jenkins/agent/workspace/first/Jenkinsfile"
 
 # Chart.yaml path
-chart_yaml_path="/home/jenkins/agent/workspace/first/one-frontend-helm-chart/Chart.yaml"
+chart_yaml_path="/home/jenkins/agent/workspace/first/my-frontend-chart/Chart.yaml"
 
 # Deployment.yaml path
-deployment_yaml_path="/home/jenkins/agent/workspace/first/one-frontend-helm-chart/templates/deployment.yaml"
+deployment_yaml_path="/home/jenkins/agent/workspace/first/my-frontend-chart/templates/deployment.yaml"
 
 # Get current image tag and increment
 current_tag=$(awk '/image:/ {print $2}' "$deployment_yaml_path" | cut -d ':' -f 2)
 new_tag=$(increment_image_tag "$current_tag")
 
 # Replace image tag in deployment.yaml
-sed -i "s/image: lavi324\/one-frontend:$current_tag/image: lavi324\/one-frontend:$new_tag/" "$deployment_yaml_path"
+sed -i "s/image: lavi324\/frontend:$current_tag/image: lavi324\/frontend:$new_tag/" "$deployment_yaml_path"
 echo "Image tag updated from $current_tag to $new_tag in deployment.yaml."
 
 # Jenkinsfile - Get current image tag and increment
@@ -47,7 +47,7 @@ current_chart_version=$(awk -F '[.-]' '/helm push/ {print $4 "." $5 "." $6}' "$j
 new_chart_version=$(increment_helm_chart_version "$current_chart_version")
 
 # Replace helm chart version in Jenkinsfile
-sed -i "s/helm push one-frontend-helm-chart-$current_chart_version.tgz/helm push one-frontend-helm-chart-$new_chart_version.tgz/" "$jenkinsfile_path"
+sed -i "s/helm push my-frontend-chart-$current_chart_version.tgz/helm push my-frontend-chart-$new_chart_version.tgz/" "$jenkinsfile_path"
 echo "Helm chart version updated from $current_chart_version to $new_chart_version in Jenkinsfile."
 
 # Chart.yaml - Get current helm chart version and increment
